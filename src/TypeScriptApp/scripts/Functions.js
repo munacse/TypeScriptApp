@@ -50,6 +50,6 @@ var foo1 = function (x, y, z) { return x + y + z; };
 //#Lambda Statement
 var bar = function (x) {
     x = x + 10;
-    console.log(x);
+    //console.log(x);
 };
 bar(90);

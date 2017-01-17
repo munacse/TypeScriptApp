@@ -56,7 +56,7 @@ var foo1 = (x: number, y: number, z: number) => x + y + z;
 //#Lambda Statement
 var bar = (x: number) => {
     x = x + 10;
-    console.log(x);
+    //console.log(x);
 }
 bar(90);
 
