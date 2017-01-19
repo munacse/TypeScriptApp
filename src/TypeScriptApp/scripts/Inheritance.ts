@@ -19,6 +19,6 @@ interface IParent2 {
 }
 interface IChild extends IParent1, IParent2{ }
 var objChild: IChild = { v1: 23, v2: 90 };
-console.log(objChild);
+//console.log(objChild);
 
 

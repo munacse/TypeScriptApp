@@ -60,3 +60,87 @@ var bar = (x: number) => {
 }
 bar(90);
 
+let datas: number[] = [2, 4, 6, 8, 5, 1, 0];
+//datas.forEach(item => console.log(item));
+
+function Book(){
+    this.publishdate = 2016;
+    setInterval(() => {
+        console.log(this.publishdate);
+    },1000)
+}
+//Book();
+enum Category { Biography, Fiction, History, Children };
+function GetAllBook(){
+    let Books = [
+        { id: 1, title: 'Sherlockholmes', category: Category.Fiction, available: true },
+        { id: 2, title: 'Six Moons', category: Category.Fiction, available: true },
+        { id: 3, title: 'Life of Pie', category: Category.Children, available: true },
+        { id: 4, title: 'Ultimate Goal', category: Category.Biography, available: true },
+        { id: 5, title: 'Final Destiny', category: Category.History, available: true }
+    ];
+    return Books;
+}
+
+function GetBookTitleByCategory(categoryFilter: Category): Array<string> {
+    console.log('Getting Books in category: ' + Category[categoryFilter]);
+
+    const allBooks = GetAllBook();
+    const filteredTitle: string[] = [];
+
+    for (let currentBook of allBooks) {
+        if (currentBook.category === categoryFilter) {
+            filteredTitle.push(currentBook.title);
+        }
+    }
+
+    return filteredTitle;
+}
+
+function LogBookTitles(titles: string[]): void {
+    for (let title of titles) {
+        console.log(title);
+    }
+}
+
+function GetBookById(bookId: number) {
+    const allBook = GetAllBook();
+    return allBook.filter(book => book.id === bookId)[0];
+}
+
+function CreateCustomer(name: string, age?: number, city?: string): void {
+    console.log('Creating Customer ' + name);
+    if (age) {
+        console.log('Age :' + age);
+    }
+    if (city) {
+        console.log('City :' + city);
+    }
+}
+
+function CheckoutBooks(customer: string, ...bookIds: number[]): string[] {
+    console.log('Checking out books for ' + customer);
+    let bookCheckedOut: string[] = [];
+    for (let id of bookIds) {
+        let book = GetBookById(id);
+        if (book.available) {
+            bookCheckedOut.push(book.title);
+        }
+    }
+    return bookCheckedOut;
+}
+//=================#########=============
+
+let myBooks: string[] = CheckoutBooks('Shanu', 2,4,5);
+myBooks.forEach(title => console.log(title));
+//CreateCustomer('Saom');
+//CreateCustomer('Prapty', 23);
+//CreateCustomer('Saifan', 34, 'Dhaka');
+
+//let firstbook = GetBookById(4);
+//console.log(firstbook);
+//const fictionBooks = GetBookTitleByCategory(Category.Fiction);
+//LogBookTitles(fictionBooks);
+//fictionBooks.forEach((id, title) => console.log('Id :' + id + ', Title :' + title));
+
+

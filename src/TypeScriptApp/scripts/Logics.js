@@ -1,6 +1,5 @@
 var num = 5;
 if (num > 4) {
-    console.log("Yes greater then 4");
 }
 switch (num) {
     case 1:
@@ -16,7 +15,7 @@ switch (num) {
         console.log("Its 4");
         break;
     case 5:
-        console.log("Its 5");
+        //console.log("Its 5");
         break;
     default:
         console.log("Default");

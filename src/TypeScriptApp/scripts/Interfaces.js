@@ -1,3 +1,4 @@
+"use strict";
 var customer = {
     firstName: "Muna",
     lastName: "Mehtab"

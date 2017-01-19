@@ -1,4 +1,5 @@
-﻿
+﻿import { Category } from './enums';
+
 interface IPerson {
     firstName: string,
     lastName: string
